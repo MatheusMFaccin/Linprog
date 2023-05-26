@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from scipy.optimize import linprog
 
             
@@ -11,7 +10,7 @@ results = [8,5,10]
 limites = ((5, 8), (0, None))
     
 
-resultado  = linprog(objetivo,A_ub = coefs,b_ub = results,bounds = limites)
+resultado  = linprog(objetivo,A_ub = coefs,b_ub = results,bounds = limites, method = 'simplex')
 
 if resultado.success:
     x_obj, y_obj = resultado.x
