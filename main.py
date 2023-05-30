@@ -12,9 +12,9 @@ results = [30,70]
 # minX maxX minY maxY
 #define os limites (min,max)
 limites = ((0, None))
-    
+#recebe o resultado da função na variavel resultado
 resultado = linprog(objetivo,A_ub = coefs,b_ub = results,bounds = limites, method = 'simplex')
-
+#se a função deu certo ele armazena o ponto(x,y) nas variaveis x_obj, y_obj
 if resultado.success:
     x_obj, y_obj = resultado.x
 
